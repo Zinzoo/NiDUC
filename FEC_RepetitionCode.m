@@ -1,6 +1,7 @@
 clear all;
 
-gen_repetitionCode();
+%gen_repetitionCode();
+gen_fromWav();
 
 
 encode_repetitionCode();
