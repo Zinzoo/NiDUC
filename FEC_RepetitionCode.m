@@ -1,13 +1,13 @@
 clear all;
 
-%gen_repetitionCode();
-gen_fromWav();
+gen_repetitionCode();
+%gen_fromWav();
 
 
 encode_repetitionCode();
 
 
-gen_basic_mistakeBits();
+gen_gilbert_mistake();
 
 
 decode_repetitionCode();
