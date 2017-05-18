@@ -2,7 +2,7 @@ function [] = gen_gilbert_mistake()
   p = 0.02777;  % Good state to bad state
   r = 0.25;     % Bad state to good state
 
-  A_vector = load('sygnal.txt', '-ascii');
+  A_vector = load('afterRepetition.txt', '-ascii');
   A = A_vector.';
   
   % Load from file if pattern file exists

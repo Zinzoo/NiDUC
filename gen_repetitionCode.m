@@ -9,9 +9,9 @@ function [] = gen_repetitionCode()
       end
     end
 
-    #wyswietlamy nasz sygnal
+    %wyswietlamy nasz sygnal
     %disp(tabSygnal);
-    #lub
+    %lub
     %fprintf('Sygnal: \n');
     %fprintf('%d',tabSygnal);
 
