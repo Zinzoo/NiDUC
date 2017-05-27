@@ -13,7 +13,11 @@ function [] = gen_gilbert_mistake()
   end;
   
   % If sizes of data differ, generate new pattern
-  if rows(error_pattern) != rows(A_vector)    
+  
+  %w Matlabie wywala Undefined function 'rows' for input arguments of type 'double'.
+  
+  if rows(error_pattern) ~= rows(A_vector) % w matlabie "~=" w Octavie "!="   
+      
     check = 100;
     while check >= 10
       good = 1;

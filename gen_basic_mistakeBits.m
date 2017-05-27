@@ -1,8 +1,8 @@
 function [] = gen_basic_mistakeBits()
-    #Generowanie bledow
+    %Generowanie bledow
     %Zmiana sygnalu zgonie z rozkladem rownomiernym
     %Ustawienia
-    filename = "afterRepetition.txt";
+    filename = 'afterRepetition.txt';
     ber = 0.3;
 
     %Odczyz z pliku do wektora

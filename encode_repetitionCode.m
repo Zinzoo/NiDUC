@@ -1,5 +1,5 @@
 function [] = encode_repetitionCode()
-    #Proces kodowania poprzez zwielokrotnienie kazdego elementu
+    %Proces kodowania poprzez zwielokrotnienie kazdego elementu
     %otworzenie pliku .txt oraz przeniesienie jego wartoœci do wektora
 
     A_vector = load('sygnal.txt', '-ascii');
