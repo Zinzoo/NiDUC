@@ -3,7 +3,9 @@ function [] = gen_fromWav()
     t=0:1/fs:(length(wave)-1)/fs;  
     plot(t,wave);
 
-    wavdata = wavread('sygnal.wav');
+    %zamiana z "vaveread" na "audioread"
+    wavdata = audioread('sygnal.wav');
+    %%%%%%%%%%%
     wavbinary = dec2bin( typecast( single(wavdata(:)), 'uint8'), 8 ) - '0';
     %orig_size = size(wavdata);
 
@@ -13,7 +15,7 @@ function [] = gen_fromWav()
 
     fprintf('%d\n',sygl);
 
-    file = fopen("sygnal.txt", "wt");
+    file = fopen('sygnal.txt', 'wt');
     for k = 1 : sygl
       if(wavbinary(k)==1)
 	      fprintf(file,'%s\n','1');

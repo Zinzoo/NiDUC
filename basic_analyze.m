@@ -1,5 +1,5 @@
 function [] = basic_analyze()
-    #Analiza wynikow
+    %Analiza wynikow
     dlugosc=1000;
 
     sygPrzed = zeros(1,dlugosc);
@@ -16,7 +16,7 @@ function [] = basic_analyze()
     end
     howMany = 0;
     for k = 1 :dlugosc
-      if sygPrzed(k) != sygPo(k)
+      if sygPrzed(k) ~= sygPo(k) %"~=" w matlabie to to samo co "!=" w octavie
         howMany = howMany + 1 ;
       end
     end
