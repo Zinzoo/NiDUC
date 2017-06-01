@@ -4,8 +4,13 @@ function [] = decode_repetitionCode()
     A_vector = A.';
 
     B_vector=[];
+    
 
-    for i=0:(size(A_vector)(2)/3)-1
+   % for i=0:(size(A_vector)(2)/3)-1
+  % for i=0:(size(A_vector)/3)-1
+  %i=0;
+  x= size(A_vector);
+  for i=0:((x(2)/3)-1)
     s1=A_vector(3*i +1) ;
     s2=A_vector(3*i +2);
     s3=A_vector(3*i +3);
@@ -15,8 +20,9 @@ function [] = decode_repetitionCode()
           
        else
         B_vector = [B_vector 0];
-        end
-    end
+      end
+  
+  end
 
     %zapis wektora do pliku .txt
  
