@@ -1,4 +1,4 @@
-function[]  = encode_hammingCode(p)
+function n  = encode_hammingCode(p)
 
 
     A_vector = load('sygnal.txt', '-ascii');
@@ -28,7 +28,7 @@ function[]  = encode_hammingCode(p)
         end
     
         k=2^m-1 -m;
-        n=2^m-1;
+            n=2^m-1;
             
        out = encode(B,n,k,'hamming/binary');
         final=[final out];
@@ -56,6 +56,8 @@ function[]  = encode_hammingCode(p)
      
        
         end
+        
+        n=length(final)/length(A);
         
     fid = fopen('afterRepetition.txt','wt');
     for i = 1:size(final,1)

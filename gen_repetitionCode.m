@@ -15,9 +15,9 @@ function [] = gen_repetitionCode()
     %fprintf('Sygnal: \n');
     %fprintf('%d',tabSygnal);
 
-    #zapis naszego sygnalu do pliku
+    %zapis naszego sygnalu do pliku
 
-    file = fopen("sygnal.txt", "wt");
+    file = fopen('sygnal.txt', 'wt');
     for k = 1 : dlugoscSygnalu
      if(tabSygnal(k)==1)
 	      fprintf(file,'%s\n','1');

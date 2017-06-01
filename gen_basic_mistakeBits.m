@@ -1,9 +1,10 @@
-function [] = gen_basic_mistakeBits()
+function [] = gen_basic_mistakeBits(b)
     %Generowanie bledow
     %Zmiana sygnalu zgonie z rozkladem rownomiernym
     %Ustawienia
     filename = 'afterRepetition.txt';
-    ber = 0.3;
+ %filename = 'sygnal.txt';
+    ber = b;
 
     %Odczyz z pliku do wektora
     A_vector = load(filename, '-ascii');
@@ -24,6 +25,7 @@ function [] = gen_basic_mistakeBits()
     A=A(:)';
     %Zapis do pliku
     fid = fopen('afterErrorsGeneration.txt','wt');
+ %fid = fopen('out.txt','wt');
     for i = 1:size(A,1)
         fprintf(fid,'%d\n',A(i,:));
     end
