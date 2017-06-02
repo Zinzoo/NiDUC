@@ -1,8 +1,11 @@
-function[]  = decode_hammingCode(p)
+function decoded  = decode_hammingCode(p, input)
 
-
-    A = load('afterErrorsGeneration.txt', '-ascii');
+	A = input;
+    %A = load('afterErrorsGeneration.txt', '-ascii');
     A_vector = A.';       
+    size(A_vector)
+    length(A_vector)
+    %A_vector
        m=3;
         while((2^m)-1 -m <p)  
         m=m+1;    
@@ -19,7 +22,7 @@ function[]  = decode_hammingCode(p)
 
                     if(q+n<length(A_vector))
                              B=A_vector(q+1:q+n);    
-
+                       k
                         out = decode(B,n,k,'hamming/binary');
                         out=out(1:p)    ;
                         final=[final out];
@@ -29,7 +32,7 @@ function[]  = decode_hammingCode(p)
                         n=length(B);
                         m=log2(n+1);
                         k=n-m;
-                        
+                        k
                       out = decode(B,n,k,'hamming/binary');
 
                         final=[final out];
@@ -39,11 +42,11 @@ function[]  = decode_hammingCode(p)
             end
          
    
-    fid1=fopen('output.txt','wt');
-    fprintf(fid1,'%d\n',final);
-    fclose(fid1);
+    %fid1=fopen('output.txt','wt');
+    %fprintf(fid1,'%d\n',final);
+    %fclose(fid1);
 
-
+	decoded = final;
 
 end
 
