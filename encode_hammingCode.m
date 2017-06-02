@@ -1,7 +1,7 @@
-function n  = encode_hammingCode(p)
+function out  = encode_hammingCode(p, sygnal)
 
 
-    A_vector = load('sygnal.txt', '-ascii');
+    A_vector = sygnal;
     A = A_vector.';
     %p-wielkosæ paczki wchodzi do programu jako argument
     
@@ -59,12 +59,14 @@ function n  = encode_hammingCode(p)
         
         n=length(final)/length(A);
         
-    fid = fopen('afterRepetition.txt','wt');
-    for i = 1:size(final,1)
-       fprintf(fid,'%d\n',final(i,:));
-    end
-    fclose(fid)
     
+	%fid = fopen('afterRepetition.txt','wt');
+    %for i = 1:size(final,1)
+     %  fprintf(fid,'%d\n',final(i,:));
+    %end
+    %fclose(fid)
+    
+	out = final;
 
 
 

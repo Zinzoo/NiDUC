@@ -1,33 +1,25 @@
-function [] = gen_basic_mistakeBits(b)
+function [out , errors] = gen_basic_mistakeBits(p, signal)
     %Generowanie bledow
     %Zmiana sygnalu zgonie z rozkladem rownomiernym
     %Ustawienia
-    filename = 'afterRepetition.txt';
- %filename = 'sygnal.txt';
-    ber = b;
 
     %Odczyz z pliku do wektora
-    A_vector = load(filename, '-ascii');
-    A = A_vector.'; 
-
-    %Wyliczanie parametrów
-    totalBIT = length(A);
-    toChange = floor(ber*totalBIT);
-
-
-    %Wytwarzanie bledow
-    for i = 1:toChange
-        currIndex = randi(totalBIT);
-        A(currIndex) = bitxor(1, A(currIndex));
-    end
+    %A_vector = load(filename, '-ascii');
+    %A = A_vector.';
+    A = signal;
     
-   
-    A=A(:)';
-    %Zapis do pliku
-    fid = fopen('afterErrorsGeneration.txt','wt');
- %fid = fopen('out.txt','wt');
-    for i = 1:size(A,1)
-        fprintf(fid,'%d\n',A(i,:));
+    %Wyliczanie parametrów
+    errors = 0;
+    out = [];
+    %Wytwarzanie bledow
+    for i = 1:size(signal,2)
+        isBad = rand(1) < p;
+        if(isBad)
+            errors = errors +1;
+            out = [out bitxor(1, A(i))];
+        else
+            out = [out A(i)];
+        end;
     end
-    fclose(fid)
+     
  end
