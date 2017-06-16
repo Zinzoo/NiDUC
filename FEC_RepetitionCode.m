@@ -1,19 +1,20 @@
 clear all;
 
 p=11; %
-b=0.9
+b=0.1;
+sygnal=[1;1;1;1;1;1;1;1;1;1;1;1;1;1;1];
 %gen_repetitionCode();
-gen_fromWav();
+%gen_fromWav();
 %generowanie2();
 
-n=encode_hammingCode(p);
+sygnal=encode_hammingCode(p,sygnal);
 %n=encode_repetitionCode();
 
-gen_basic_mistakeBits(b);
+%sygnal=gen_basic_mistakeBits(b,sygnal);
 %gen_gilbert_mistake(); 
-decode_hammingCode(p)
-
+sygnal=decode_hammingCode(p,sygnal)
+sygnal
 %decode_repetitionCode();
 
-basic_analyze();
-n
+%basic_analyze();
+%n

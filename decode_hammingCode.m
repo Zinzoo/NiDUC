@@ -2,7 +2,8 @@ function decoded  = decode_hammingCode(p, input)
 
 	A = input;
     %A = load('afterErrorsGeneration.txt', '-ascii');
-    A_vector = A.';       
+ %   A_vector = A.';       
+ A_vector = A;
     size(A_vector)
     length(A_vector)
     %A_vector
