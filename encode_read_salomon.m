@@ -1,5 +1,14 @@
 function [ out ] = encode_read_salomon(sygnal, k,n )
 %
+%%wyliczamy ile zer trzeba dodaæ 
+if(mod(length(sygnal),2*k)~=0)
+    extra=2*k -mod(length(sygnal),2*k );
+    vec_zeros = zeros(1,extra);
+    sygnal=[sygnal vec_zeros]
+    
+end
+%%%%
+
 %sygnal=[1,2,3,4,5,6,1,2,3,4,5,6]; %% bity sygnalu musz¹ byæ parzyste  // musz¹ dzieliæ 
 %% siê na 2k
 
