@@ -2,7 +2,7 @@ clear all;
 
 p=11; %
 b=0.1;
-sygnal=[1;1;1;1;1;1];
+sygnal=[1;1;1;1;1;1;1];
 sygnal=sygnal';
 %gen_repetitionCode();
 %gen_fromWav();
